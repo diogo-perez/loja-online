@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0F52BA;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar-title h1 {
+    font-size: 24px;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.navbar-button {
+    margin: 0;
+    margin-right: 5%;
+}
+
+.cart-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.button-value {
+    /* Adicionando um valor dentro do botão */
+    position: absolute;
+    top: -8px;
+    /* Ajustando a posição vertical */
+    right: -8px;
+    /* Ajustando a posição horizontal */
+    background-color: white;
+    color: black;
+    /* Cor do texto */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* Transformando o valor em um círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    /* Tamanho da fonte */
+}

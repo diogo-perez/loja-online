@@ -1,0 +1,78 @@
+.custom-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* Para esconder os cantos arredondados da imagem */
+    position: relative;
+    height: 380px;
+    /* Posição relativa para posicionar o botão */
+}
+
+.card-image {
+    display: block;
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    justify-content: space-between;
+}
+
+.title-value-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card-value {
+    background-color: #373737;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-description {
+    margin-top: 0;
+    font-size: 10px;
+    flex-grow: 1;
+    height: 100px;
+    margin-bottom: 20px;
+    /* Expandir para ocupar o espaço disponível */
+}
+
+
+.card-button {
+    z-index: 999;
+    display: block;
+    background-color: #0F52BA;
+    color: white;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    align-self: flex-end;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+    /* Transição suave */
+}
+
+.card-button:hover {
+    background-color: #0F52BA;
+    /* Mudança de cor ao passar o mouse */
+}
