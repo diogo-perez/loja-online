@@ -31,9 +31,9 @@ const ModalComponent = ({ isOpen, onClose, selectedProduct, onRemoveItemClick, o
 
     useEffect(() => {
         if (isOpen) {
-            document.body.style.overflow = 'hidden'; // Impede o scroll do corpo quando a modal está aberta
+            document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = 'unset'; // Restaura o comportamento padrão do scroll
+            document.body.style.overflow = 'unset';
         }
     }, [isOpen]);
 

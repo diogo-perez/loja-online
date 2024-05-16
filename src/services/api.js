@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { baseAPI } from '../services/url';
 import { Product } from '../class/product';
-export async function buscaProducts() {
+export async function buscaProducts(page) {
     try {
-        const response = await axios.get(`${baseAPI}/products?page=1&rows=8&sortBy=id&orderBy=ASC`);
+        const response = await axios.get(`${baseAPI}/products?page=${page}&rows=8&sortBy=id&orderBy=ASC`);
         if (response.status == 200) {
             const data = response.data.products;
             return data.map((item) => Product(item));

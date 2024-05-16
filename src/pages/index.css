@@ -7,5 +7,26 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    /* Reduzindo o espaço entre os cartões */
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-arrow {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 8px;
+}
+
+.item-page {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }

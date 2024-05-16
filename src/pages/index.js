@@ -5,21 +5,26 @@ import Card from '../components/card/card';
 import { buscaProducts } from '../services/api';
 import { toast } from 'react-toastify';
 import ModalComponent from '../components/modal/modal';
-import { formatPriceToNumber, formatValor } from '../utils/function';
+import { formatValor } from '../utils/function';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { motion } from "framer-motion";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState([]);
-    const [itemCount, setItemCount] = useState(0);
+    const [itemPage, setItemPage] = useState(1);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
 
     const fetchProducts = async () => {
         try {
-            const response = await buscaProducts();
+            const response = await buscaProducts(itemPage);
             if (response != null) {
-                setProducts(response)
+                setProducts(response);
+                setLoading(false);
             }
         } catch (error) {
             toast.error('Erro ao buscar produtos:' + error);
@@ -64,23 +69,50 @@ const Home = () => {
 
     useEffect(() => {
         fetchProducts()
-    }, []);
+    }, [itemPage]);
 
     return (
         <div>
             <Navbar itemCount={selectedProduct.length} modal={openModal} />
-            <div className="content">
-                <div className="grid">
-                    {products.map((product, index) => (
-                        <Card
-                            image={product.imagem}
-                            title={product.nome}
-                            description={product.descricao}
-                            value={product.preco}
-                            buttonText="COMPRAR"
-                            onClick={() => comprar(product)}
-                        />
-                    ))}
+            <div className="content" key={1}>
+                <motion.div
+                    className="grid"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+
+                    {loading ? (
+                        Array.from({ length: 8 }).map((_, index) =>
+                            <Skeleton key={index} variant="rectangular" width={250} height={250} />
+                        )
+                    ) : (
+                        products.map((product, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
+                                <Card
+                                    image={product.imagem}
+                                    title={product.nome}
+                                    description={product.descricao}
+                                    value={product.preco}
+                                    buttonText="COMPRAR"
+                                    onClick={() => comprar(product)}
+                                />
+                            </motion.div>
+                        )))}
+                </motion.div>
+                <div className="pagination-container">
+                    <button onClick={() => setItemPage(itemPage - 1)} className="btn-arrow" disabled={itemPage === 1}>
+                        <IoIosArrowBack size={24} />
+                    </button>
+                    <div className="item-page">{itemPage}</div>
+                    <button onClick={() => setItemPage(itemPage + 1)} className="btn-arrow" disabled={itemPage === 1}>
+                        <IoIosArrowForward size={24} />
+                    </button>
                 </div>
             </div>
             <ModalComponent

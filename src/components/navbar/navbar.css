@@ -7,10 +7,24 @@
     color: white;
 }
 
+.navbar-title {
+    display: flex;
+    align-items: baseline;
+}
+
 .navbar-title h1 {
-    font-size: 24px;
+    font-size: 40px;
+    font-weight: 600;
     margin: 0;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.navbar-title h2 {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
 }
 
 .navbar-button {
@@ -29,23 +43,17 @@
 }
 
 .button-value {
-    /* Adicionando um valor dentro do botão */
     position: absolute;
     top: -8px;
-    /* Ajustando a posição vertical */
     right: -8px;
-    /* Ajustando a posição horizontal */
     background-color: white;
     color: black;
-    /* Cor do texto */
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    /* Transformando o valor em um círculo */
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 600;
     font-size: 12px;
-    /* Tamanho da fonte */
 }

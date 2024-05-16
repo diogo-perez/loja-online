@@ -6,7 +6,7 @@ const Navbar = ({ itemCount, modal }) => {
     return (
         <nav className="navbar">
             <div className="navbar-title">
-                <h1>Loja Online</h1>
+                <h1>MKS</h1> <h2>Sistemas</h2>
             </div>
             <div className="navbar-button">
                 <button className="cart-button" onClick={modal}>

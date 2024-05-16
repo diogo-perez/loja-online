@@ -2,10 +2,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    /* Para esconder os cantos arredondados da imagem */
     position: relative;
     height: 380px;
-    /* Posição relativa para posicionar o botão */
 }
 
 .card-image {
@@ -41,17 +39,17 @@
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .card-description {
     margin-top: 0;
     font-size: 10px;
+    font-weight: 300;
     flex-grow: 1;
     height: 100px;
     margin-bottom: 20px;
-    /* Expandir para ocupar o espaço disponível */
 }
 
 
@@ -64,15 +62,12 @@
     border-radius: 0 0 5px 5px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 550;
+    font-weight: 600;
     text-align: center;
     align-self: flex-end;
-    font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s ease;
-    /* Transição suave */
 }
 
 .card-button:hover {
     background-color: #0F52BA;
-    /* Mudança de cor ao passar o mouse */
 }
